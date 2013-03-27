@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	   xsi:schemaLocation="
+	   		http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd
+          	http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit-1.0.xsd
+	   		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+	
+	<mongo:mongo id="mongo" host="jira.nebulent.com" port="27017"/>
+	
+	<bean id="jsonMessageConverter" class="amqp.spring.converter.XStreamConverter"/>
+	<bean id="textMessageConverter" class="amqp.spring.converter.StringConverter"/>
+	<bean id="messageConverter" class="amqp.spring.converter.ContentTypeConverterFactory">
+	    <property name="converters">
+	        <map>
+	            <entry key="application/json" value-ref="jsonMessageConverter"/>
+	            <entry key="application/xml" value-ref="textMessageConverter"/>
+	        </map>
+	    </property>
+	    <property name="fallbackConverter" ref="jsonMessageConverter"/>
+	</bean>
+
+	<rabbit:connection-factory id="amqpConnectionFactory" />
+	<rabbit:template id="amqpTemplate" connection-factory="amqpConnectionFactory" 
+	      message-converter="messageConverter"/>
+	<rabbit:admin connection-factory="amqpConnectionFactory"/>
+	<bean id="amqpConnectionFactory" 
+	      class="org.springframework.amqp.rabbit.connection.CachingConnectionFactory">
+	    <property name="host" value="jira.nebulent.com"/>
+	    <property name="port" value="5672"/>
+	    <property name="username" value="guest"/>
+	    <property name="password" value="guest"/>
+	    <property name="virtualHost" value="/"/>
+	</bean>
+	
+	<camel:camelContext id="camelContext">
+		<camel:route>
+			<camel:from uri="direct:process-email"/> 
+			<camel:to uri="log:hypermail.incoming?level=INFO"/>
+			<camel:to uri="spring-amqp:myExchange:testQueue:test?type=direct"/>
+		</camel:route>
+		
+		<camel:route>
+			<camel:from uri="spring-amqp:myExchange:testQueue:test?type=direct?concurrentConsumers=8"/>
+			<camel:to uri="mongodb:mongo?database=hypermail&amp;collection=messages&amp;operation=insert"/>
+		</camel:route>
+		
+	</camel:camelContext>
+</beans>

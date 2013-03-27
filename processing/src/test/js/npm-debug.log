@@ -1,0 +1,195 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'nodeload' ]
+2 info using npm@1.2.10
+3 info using node@v0.8.19
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose read json C:\Users\lordorient\Documents\GitHub\hypermail\processing\src\test\js\package.json
+6 verbose read json C:\Users\lordorient\Documents\GitHub\hypermail\processing\src\test\js\node_modules\nodemailer\package.json
+7 verbose read json C:\Users\lordorient\Documents\GitHub\hypermail\processing\src\test\js\package.json
+8 verbose cache add [ 'nodeload', null ]
+9 verbose cache add name=undefined spec="nodeload" args=["nodeload",null]
+10 verbose parsed url { pathname: 'nodeload', path: 'nodeload', href: 'nodeload' }
+11 silly lockFile f6b3c70f-nodeload nodeload
+12 verbose lock nodeload C:\Users\lordorient\AppData\Roaming\npm-cache\f6b3c70f-nodeload.lock
+13 silly lockFile f6b3c70f-nodeload nodeload
+14 silly lockFile f6b3c70f-nodeload nodeload
+15 verbose addNamed [ 'nodeload', '' ]
+16 verbose addNamed [ null, '' ]
+17 silly lockFile 5cd965c9-nodeload nodeload@
+18 verbose lock nodeload@ C:\Users\lordorient\AppData\Roaming\npm-cache\5cd965c9-nodeload.lock
+19 silly addNameRange { name: 'nodeload', range: '', hasData: false }
+20 verbose url raw nodeload
+21 verbose url resolving [ 'https://registry.npmjs.org/', './nodeload' ]
+22 verbose url resolved https://registry.npmjs.org/nodeload
+23 info trying registry request attempt 1 at 17:30:00
+24 verbose etag "F1NQEQLEYT7SAWXTXXCI3W3Z3"
+25 http GET https://registry.npmjs.org/nodeload
+26 http 304 https://registry.npmjs.org/nodeload
+27 silly registry.get cb [ 304,
+27 silly registry.get   { server: 'CouchDB/1.2.1 (Erlang OTP/R15B03)',
+27 silly registry.get     etag: '"F1NQEQLEYT7SAWXTXXCI3W3Z3"',
+27 silly registry.get     date: 'Wed, 27 Mar 2013 15:30:00 GMT',
+27 silly registry.get     'content-length': '0' } ]
+28 verbose etag nodeload from cache
+29 silly addNameRange number 2 { name: 'nodeload', range: '', hasData: true }
+30 silly addNameRange versions [ 'nodeload', [ '0.2.0', '0.4.0' ] ]
+31 verbose addNamed [ 'nodeload', '0.4.0' ]
+32 verbose addNamed [ '0.4.0', '0.4.0' ]
+33 silly lockFile 6013f887-nodeload-0-4-0 nodeload@0.4.0
+34 verbose lock nodeload@0.4.0 C:\Users\lordorient\AppData\Roaming\npm-cache\6013f887-nodeload-0-4-0.lock
+35 silly lockFile 8211e714--org-nodeload-nodeload-0-4-0-tgz https://registry.npmjs.org/nodeload/-/nodeload-0.4.0.tgz
+36 verbose lock https://registry.npmjs.org/nodeload/-/nodeload-0.4.0.tgz C:\Users\lordorient\AppData\Roaming\npm-cache\8211e714--org-nodeload-nodeload-0-4-0-tgz.lock
+37 verbose addRemoteTarball [ 'https://registry.npmjs.org/nodeload/-/nodeload-0.4.0.tgz',
+37 verbose addRemoteTarball   '79fa406f7166229459bebd7db621940416b676ec' ]
+38 info retry fetch attempt 1 at 17:30:15
+39 verbose fetch to= C:\Users\LORDOR~1\AppData\Local\Temp\npm-7784\1364398211690-0.861189950723201\tmp.tgz
+40 http GET https://registry.npmjs.org/nodeload/-/nodeload-0.4.0.tgz
+41 http 200 https://registry.npmjs.org/nodeload/-/nodeload-0.4.0.tgz
+42 silly shasum updated bytes 40960
+43 silly shasum updated bytes 40960
+44 silly shasum updated bytes 40960
+45 silly shasum updated bytes 40960
+46 silly shasum updated bytes 40960
+47 silly shasum updated bytes 40960
+48 silly shasum updated bytes 40960
+49 silly shasum updated bytes 40960
+50 silly shasum updated bytes 19316
+51 info shasum 79fa406f7166229459bebd7db621940416b676ec
+51 info shasum C:\Users\LORDOR~1\AppData\Local\Temp\npm-7784\1364398211690-0.861189950723201\tmp.tgz
+52 verbose tar unpack C:\Users\LORDOR~1\AppData\Local\Temp\npm-7784\1364398211690-0.861189950723201\tmp.tgz
+53 silly lockFile da190f59-211690-0-861189950723201-package C:\Users\LORDOR~1\AppData\Local\Temp\npm-7784\1364398211690-0.861189950723201\package
+54 verbose lock C:\Users\LORDOR~1\AppData\Local\Temp\npm-7784\1364398211690-0.861189950723201\package C:\Users\lordorient\AppData\Roaming\npm-cache\da190f59-211690-0-861189950723201-package.lock
+55 silly lockFile d4c5b813-211690-0-861189950723201-tmp-tgz C:\Users\LORDOR~1\AppData\Local\Temp\npm-7784\1364398211690-0.861189950723201\tmp.tgz
+56 verbose lock C:\Users\LORDOR~1\AppData\Local\Temp\npm-7784\1364398211690-0.861189950723201\tmp.tgz C:\Users\lordorient\AppData\Roaming\npm-cache\d4c5b813-211690-0-861189950723201-tmp-tgz.lock
+57 silly gunzTarPerm modes [ '755', '644' ]
+58 silly gunzTarPerm extractEntry .gitmodules
+59 silly gunzTarPerm extractEntry .npmignore
+60 silly gunzTarPerm extractEntry console/
+61 silly gunzTarPerm extractEntry console/console.html
+62 silly gunzTarPerm extractEntry console/css/
+63 silly gunzTarPerm extractEntry console/css/console.css
+64 silly gunzTarPerm extractEntry console/css/pepper-grinder/
+65 silly gunzTarPerm extractEntry console/css/pepper-grinder/images/
+66 silly gunzTarPerm extractEntry console/css/pepper-grinder/images/ui-bg_diagonal-maze_20_6e4f1c_10x10.png
+67 silly gunzTarPerm extractEntry console/css/pepper-grinder/images/ui-bg_diagonal-maze_40_000000_10x10.png
+68 silly gunzTarPerm extractEntry console/css/pepper-grinder/images/ui-bg_fine-grain_10_eceadf_60x60.png
+69 silly gunzTarPerm extractEntry console/css/pepper-grinder/images/ui-bg_fine-grain_10_f8f7f6_60x60.png
+70 silly gunzTarPerm extractEntry console/css/pepper-grinder/images/ui-bg_fine-grain_15_eceadf_60x60.png
+71 silly gunzTarPerm extractEntry console/css/pepper-grinder/images/ui-bg_fine-grain_15_f7f3de_60x60.png
+72 silly gunzTarPerm extractEntry console/css/pepper-grinder/images/ui-bg_fine-grain_15_ffffff_60x60.png
+73 silly gunzTarPerm extractEntry console/css/pepper-grinder/images/ui-bg_fine-grain_65_654b24_60x60.png
+74 silly gunzTarPerm extractEntry console/css/pepper-grinder/images/ui-bg_fine-grain_68_b83400_60x60.png
+75 silly gunzTarPerm extractEntry console/css/pepper-grinder/images/ui-icons_222222_256x240.png
+76 silly gunzTarPerm extractEntry console/css/pepper-grinder/images/ui-icons_3572ac_256x240.png
+77 silly gunzTarPerm extractEntry console/css/pepper-grinder/images/ui-icons_8c291d_256x240.png
+78 silly gunzTarPerm extractEntry console/css/pepper-grinder/images/ui-icons_b83400_256x240.png
+79 silly gunzTarPerm extractEntry console/css/pepper-grinder/images/ui-icons_fbdb93_256x240.png
+80 silly gunzTarPerm extractEntry console/css/pepper-grinder/images/ui-icons_ffffff_256x240.png
+81 silly gunzTarPerm extractEntry console/css/pepper-grinder/jquery-ui-1.8.5.custom.css
+82 silly gunzTarPerm extractEntry console/js/
+83 silly gunzTarPerm extractEntry console/js/console.data.js
+84 silly gunzTarPerm extractEntry console/js/console.ui.js
+85 silly gunzTarPerm extractEntry console/js/dygraph-combined.min.js
+86 silly gunzTarPerm extractEntry console/js/jquery-1.4.2.min.js
+87 silly gunzTarPerm extractEntry console/js/jquery-ui-1.8.5.custom.min.js
+88 silly gunzTarPerm extractEntry console/js/jquery.console.js
+89 silly gunzTarPerm extractEntry console/js/jquery.hotkeys.js
+90 silly gunzTarPerm extractEntry doc/
+91 silly gunzTarPerm extractEntry doc/developers.md
+92 silly gunzTarPerm extractEntry doc/loop.md
+93 silly gunzTarPerm extractEntry doc/monitoring.md
+94 silly gunzTarPerm extractEntry doc/nl.md
+95 silly gunzTarPerm extractEntry doc/nodeload.md
+96 silly gunzTarPerm extractEntry doc/remote.md
+97 silly gunzTarPerm extractEntry doc/reporting.md
+98 silly gunzTarPerm extractEntry doc/stats.md
+99 silly gunzTarPerm extractEntry doc/tips.md
+100 silly gunzTarPerm extractEntry examples/
+101 silly gunzTarPerm extractEntry examples/graphjmx.ex.js
+102 silly gunzTarPerm extractEntry examples/nodeload.ex.js
+103 silly gunzTarPerm extractEntry examples/remote.ex.js
+104 silly gunzTarPerm extractEntry examples/remotetesting.ex.js
+105 silly gunzTarPerm extractEntry examples/riaktest.ex.js
+106 silly gunzTarPerm extractEntry examples/sample-report.html
+107 silly gunzTarPerm extractEntry examples/simpletest.ex.js
+108 silly gunzTarPerm extractEntry examples/test-generator.js
+109 silly gunzTarPerm extractEntry examples/test-server.js
+110 silly gunzTarPerm extractEntry jmxstat/
+111 silly gunzTarPerm extractEntry jmxstat/jmxstat.jar
+112 silly gunzTarPerm extractEntry lib/
+113 silly gunzTarPerm extractEntry lib/config.js
+114 silly gunzTarPerm extractEntry lib/header.js
+115 silly gunzTarPerm extractEntry lib/http.js
+116 silly gunzTarPerm extractEntry lib/loadtesting.js
+117 silly gunzTarPerm extractEntry lib/loop/
+118 silly gunzTarPerm extractEntry lib/loop/index.js
+119 silly gunzTarPerm extractEntry lib/loop/loop.js
+120 silly gunzTarPerm extractEntry lib/loop/multiloop.js
+121 silly gunzTarPerm extractEntry lib/monitoring/
+122 silly gunzTarPerm extractEntry lib/monitoring/collectors.js
+123 silly gunzTarPerm extractEntry lib/monitoring/index.js
+124 silly gunzTarPerm extractEntry lib/monitoring/monitor.js
+125 silly gunzTarPerm extractEntry lib/monitoring/monitorgroup.js
+126 silly gunzTarPerm extractEntry lib/monitoring/statslogger.js
+127 silly gunzTarPerm extractEntry lib/nl/
+128 silly gunzTarPerm extractEntry lib/nl/options.js
+129 silly gunzTarPerm extractEntry lib/remote/
+130 silly gunzTarPerm extractEntry lib/remote/cluster.js
+131 silly gunzTarPerm extractEntry lib/remote/endpoint.js
+132 silly gunzTarPerm extractEntry lib/remote/endpointclient.js
+133 silly gunzTarPerm extractEntry lib/remote/httphandler.js
+134 silly gunzTarPerm extractEntry lib/remote/index.js
+135 silly gunzTarPerm extractEntry lib/remote/remotetesting.js
+136 silly gunzTarPerm extractEntry lib/remote/slave.js
+137 silly gunzTarPerm extractEntry lib/remote/slavenode.js
+138 silly gunzTarPerm extractEntry lib/remote/slaves.js
+139 silly gunzTarPerm extractEntry lib/reporting/
+140 silly gunzTarPerm extractEntry lib/reporting/dygraph.tpl
+141 silly gunzTarPerm extractEntry lib/reporting/external.js
+142 silly gunzTarPerm extractEntry lib/reporting/index.js
+143 silly gunzTarPerm extractEntry lib/reporting/report.js
+144 silly gunzTarPerm extractEntry lib/reporting/reportmanager.js
+145 silly gunzTarPerm extractEntry lib/reporting/summary.tpl
+146 silly gunzTarPerm extractEntry lib/reporting/template.js
+147 silly gunzTarPerm extractEntry lib/stats.js
+148 silly gunzTarPerm extractEntry lib/util.js
+149 silly gunzTarPerm extractEntry LICENSE
+150 silly gunzTarPerm extractEntry Makefile
+151 silly gunzTarPerm extractEntry nl.js
+152 silly gunzTarPerm extractEntry nodeload.js
+153 silly gunzTarPerm extractEntry package.json
+154 silly gunzTarPerm extractEntry README.md
+155 silly gunzTarPerm extractEntry RELEASE-NOTES.md
+156 silly gunzTarPerm extractEntry results-1327556557728-stats.log
+157 silly gunzTarPerm extractEntry results-1327556557728.html
+158 silly gunzTarPerm extractEntry results-2012-02-01T05:32:46.827Z-stats.log
+159 silly gunzTarPerm extractEntry results-2012-02-01T05:32:46.827Z.html
+160 silly gunzTarPerm extractEntry scripts/
+161 silly gunzTarPerm extractEntry scripts/jsmin.js
+162 silly gunzTarPerm extractEntry scripts/process_tpl.js
+163 silly gunzTarPerm extractEntry test/
+164 silly gunzTarPerm extractEntry test/http.test.js
+165 silly gunzTarPerm extractEntry test/loop.test.js
+166 silly gunzTarPerm extractEntry test/monitoring.test.js
+167 silly gunzTarPerm extractEntry test/remote.test.js
+168 silly gunzTarPerm extractEntry test/reporting.test.js
+169 silly gunzTarPerm extractEntry test/stats.test.js
+170 silly gunzTarPerm extractEntry test/util.test.js
+171 silly gunzTarPerm extractEntry TODO
+172 error Error: ENOENT, open 'C:\Users\LORDOR~1\AppData\Local\Temp\npm-7784\1364398211690-0.861189950723201\package\results-2012-02-01T05:32:46.827Z-stats.log'
+173 error If you need help, you may report this log at:
+173 error     <http://github.com/isaacs/npm/issues>
+173 error or email it to:
+173 error     <npm-@googlegroups.com>
+174 error System Windows_NT 6.1.7601
+175 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "nodeload"
+176 error cwd C:\Users\lordorient\Documents\GitHub\hypermail\processing\src\test\js
+177 error node -v v0.8.19
+178 error npm -v 1.2.10
+179 error path C:\Users\LORDOR~1\AppData\Local\Temp\npm-7784\1364398211690-0.861189950723201\package\results-2012-02-01T05:32:46.827Z-stats.log
+180 error code ENOENT
+181 error errno 34
+182 verbose exit [ 34, true ]

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+            http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<context:component-scan base-package="com.nebulent.hypermail" />
+
+	<context:property-placeholder location="classpath:db.properties" />
+
+	
+	<!-- ========================= Apache CXF Resources ========================= -->
+    <import resource="classpath:/META-INF/spring/hypermail-processing-camel.xml" />
+    
+	<!-- ========================= Resources ========================= -->
+	
+	<bean id="messageHandlerFactory" class="com.nebulent.hypermail.smtp.CamelMessageHandlerFactory"/>
+	
+	<bean id="usernamePasswordValidator" class="com.nebulent.hypermail.smtp.MongoUsernamePasswordValidator"/>
+	
+	<bean class="org.subethamail.smtp.server.SMTPServer" init-method="start">
+		<constructor-arg ref="messageHandlerFactory"/>
+		<property name="authenticationHandlerFactory">
+			<bean class="org.subethamail.smtp.auth.EasyAuthenticationHandlerFactory">
+				<constructor-arg ref="usernamePasswordValidator"/>
+			</bean>
+		</property>
+		<property name="maxConnections" value="1000"/>
+		<property name="port" value="8025"/>
+	</bean>
+	
+</beans>
