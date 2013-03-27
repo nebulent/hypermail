@@ -31,7 +31,7 @@ public class CamelMessageHandler implements MessageHandler {
 	}
 
 	public void done() {
-		sender.sendBody("direct:process-email", ExchangePattern.InOnly, message);
+		sender.sendBody("seda:process-email", ExchangePattern.InOnly, message);
 	}
 
 	public void from(String from) throws RejectException {

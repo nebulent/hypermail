@@ -10,8 +10,6 @@
 	   		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 			http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 	
-	<mongo:mongo id="mongo" host="jira.nebulent.com" port="27017"/>
-	
 	<bean id="jsonMessageConverter" class="amqp.spring.converter.XStreamConverter"/>
 	<bean id="textMessageConverter" class="amqp.spring.converter.StringConverter"/>
 	<bean id="messageConverter" class="amqp.spring.converter.ContentTypeConverterFactory">
@@ -39,13 +37,13 @@
 	
 	<camel:camelContext id="camelContext">
 		<camel:route>
-			<camel:from uri="direct:process-email"/> 
-			<camel:to uri="log:hypermail.incoming?level=INFO"/>
+			<camel:from uri="seda:process-email?concurrentConsumers=20"/> 
+			<!-- camel:to uri="log:hypermail.incoming?level=INFO"/ -->
 			<camel:to uri="spring-amqp:myExchange:testQueue:test?type=direct"/>
 		</camel:route>
 		
 		<camel:route>
-			<camel:from uri="spring-amqp:myExchange:testQueue:test?type=direct?concurrentConsumers=8"/>
+			<camel:from uri="spring-amqp:myExchange:testQueue:test?type=direct?concurrentConsumers=20"/>
 			<camel:to uri="mongodb:mongo?database=hypermail&amp;collection=messages&amp;operation=insert"/>
 		</camel:route>
 		
